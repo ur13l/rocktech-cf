@@ -37,6 +37,16 @@ const IndexPageWrapper = styled.div`
   .frame {
     border: 1px solid white;
     padding: 12px;
+    min-width: 300px;
+  }
+
+  .logo-container {
+    width: 100%;
+    text-align: center;
+    padding: 0 33px;
+    * {
+    margin: 0 auto;
+    }
   }
 
   /* 
@@ -44,36 +54,33 @@ const IndexPageWrapper = styled.div`
   ##Screen = B/w 768px to 1024px
 */
 
-  @media  (max-width: 1024px) {
+  @media (max-width: 1024px) {
     h1 {
-    font-size: 27px;
-    padding-top:54px;
-    text-align: center;
-  }
+      font-size: 27px;
+      padding-top: 54px;
+      text-align: center;
+    }
 
-  h3 {
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 24px;
-    padding-bottom:54px;
-    text-align: center;
-
-  }
+    h3 {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 24px;
+      padding-bottom: 54px;
+      text-align: center;
+    }
   }
 
   /* 
   ##Device = Tablets, Ipads (landscape)
   ##Screen = B/w 768px to 1024px
 */
-
- 
 `
 
 class IndexPage extends Component {
   render() {
     const image = this.props.data.desktop.childImageSharp.fluid
-    const logocf = this.props.data.logocf.childImageSharp.fixed
-    const rocktechlogo = this.props.data.rocktechlogo.childImageSharp.fixed
+    const logocf = this.props.data.logocf.childImageSharp.fluid
+    const rocktechlogo = this.props.data.rocktechlogo.childImageSharp.fluid
     return (
       <IndexPageWrapper>
         <Layout>
@@ -85,13 +92,23 @@ class IndexPage extends Component {
             backgroundColor={`#040e18`}
           >
             <div className="flex">
-              <Img fixed={logocf} />
+              <div className="logo-container">
+              <Img fluid={logocf} 
+                    style={{ maxWidth: "600px" }}
+                    imgStyle={{ objectFit: "contain" }}/>
+                    </div>
               <h1>¡En construcción!</h1>
-              <h3>Mientras tanto visítanos en </h3>
+              <h3>Mientras tanto conoce </h3>
               <a href="https://rocktech.mx" target="_blank">
-              <div className="frame">
-                <Img fixed={rocktechlogo} />
-              </div>
+              <div className="logo-container">
+                <div className="frame">
+                  <Img
+                    fluid={rocktechlogo}
+                    style={{ maxWidth: "400px" }}
+                    imgStyle={{ objectFit: "contain" }}
+                  />
+                </div>
+                </div>
               </a>
             </div>
           </BackgroundImage>
@@ -120,16 +137,16 @@ export const postQuery = graphql`
 
     logocf: file(relativePath: { eq: "cf-logo.png" }) {
       childImageSharp {
-        fixed(quality: 90, width: 300) {
-          ...GatsbyImageSharpFixed
+        fluid(quality: 90, maxWidth: 600) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
 
-    rocktechlogo: file(relativePath: { eq: "rocktech-logo.png" }) {
+    rocktechlogo: file(relativePath: { eq: "equity.png" }) {
       childImageSharp {
-        fixed(width: 200) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
