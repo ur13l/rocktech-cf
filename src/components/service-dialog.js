@@ -106,7 +106,7 @@ const ServiceDialog = ({ option, isOpen, onClose }) => {
       text = 'Análisis Fundamental';
       text1 = 'Analítica de datos';
       text2 = 'Opinión de Inversión';
-      imageData = data.iconBa.childImageSharp.fluid;
+      imageData = data.iconCon.childImageSharp.fluid;
       break;
   }
 
