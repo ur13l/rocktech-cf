@@ -5,7 +5,7 @@ import styled from "styled-components"
 import "../styles/global.css"
 import Logo from "./images/logo.js"
 import { FaSearch, FaTimes, FaBars } from "react-icons/fa"
-
+import Menu from "./menu"
 /**
  * HeaderWrapper element, used to set style to a component.
  */
@@ -15,6 +15,15 @@ const HeaderWrapper = styled.header`
   box-shadow: ${props => props.scrolled ? '0 3px 6px 0px rgba(0, 0, 0, 0.16)' : 'none'};
   z-index: 999999999;
   
+
+ 
+
+  .custom-link {
+    color: #df8d08;
+    font-weight: bold;
+    text-decoration: ${props => props.decoration ? props.decoration : 'none'};
+  }
+
   div {
     margin: 0 auto;
     padding: 0.5rem 0rem;
@@ -176,6 +185,17 @@ class Header extends Component {
     headerInput.focus()
   }
 
+
+  /**
+   * @method openMenu
+   * @author Uriel
+   * Method called when the menu button is pressed on mobile view.
+   */
+  openMenu() {
+    const menu = document.getElementById("drawer-menu")
+    menu.classList.remove("menu-hidden")
+  }
+
   /**
    * Called when the close button on the search bar is clicked.
    */
@@ -225,16 +245,27 @@ class Header extends Component {
   render() {
     return (
       <HeaderWrapper scrolled={this.props.scrolled}>
+          <Menu/>
         <div id="header-search" className="container is-hidden">
        
         </div>
         <div id="header-content" className="container hide-on-med-and-down">
          / <Link to="/">
-            <Logo location={this.props.location}/>
+            <Logo   location={this.props.location}/>
           </Link>
+          <ul>
+            <li>
+            <a className={"custom-link"} href={"https://crowd.rocktech.mx/proyectos-de-inversion"}>
+            CROWDFUNDING </a>
+          </li>
+          <li>
+          <a className={"custom-link"} href={"https://hub.rocktech.mx/"}>
+          HUB </a>
+          </li>
+          </ul>
         </div>
         <div id="header-mobile" className="container hide-on-large-and-up">
-          <Logo location={this.props.location}/>
+          <Logo  location={this.props.location}/>
         </div>
       </HeaderWrapper>
     )

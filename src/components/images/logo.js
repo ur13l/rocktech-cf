@@ -15,10 +15,10 @@ import styled from "styled-components"
  */
 const ImgWrapper2 = styled.span`
   display:inline-block;
-  width: 200px;
+  width: 300px;
   
   .logo {
-    margin-top: 15px;
+    margin-top: -15px;
   }
   
   @media screen and (max-width: 992px) {
@@ -36,7 +36,7 @@ const Logo = ({ location, src }) => {
     query {
       placeholderImage: file(relativePath: { eq: "cf_negro.png" }) {
         childImageSharp {
-          fluid(maxWidth: 200) {
+          fluid(maxWidth: 300) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
@@ -47,7 +47,7 @@ const Logo = ({ location, src }) => {
     <ImgWrapper2>
       <Img
         fluid={data.placeholderImage.childImageSharp.fluid}
-        style={{ maxWidth: "200px" }}
+        style={{ maxWidth: "300px" }}
         imgStyle={{ objectFit: "contain" }}
         className={"logo"}
       />

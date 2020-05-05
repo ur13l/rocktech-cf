@@ -13,6 +13,7 @@ const ServicesWrapper = styled.div`
   
   .link-services {
     padding: 0 15px;
+    font-size: 11px;
   }
   
   /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -61,7 +62,7 @@ class Services extends Component {
   render() {
     return (
       <ServicesWrapper className={"container"}>
-        <h1 style={{marginTop: '50px'}}>Servicios</h1>
+        <h1 style={{marginTop: '120px'}}></h1>
         <div className="services">
           <ServiceCard title="Análisis de Cumplimiento"
                        onClick={() => this.onCardClick(0)}/>
@@ -73,9 +74,11 @@ class Services extends Component {
                        onClick={() => this.onCardClick(3)}/>
           <ServiceCard title="Valoración del Negocio"
                        onClick={() => this.onCardClick(4)}/>
+          <ServiceCard title="Análisis de Valores"
+                       onClick={() => this.onCardClick(5)}/>
         </div>
         <div className="link-services">
-          <Link href="https://go.aws/2ylU5AM"
+          <Link href="https://go.aws/2yvmX9B"
                 align="right"
                 decoration="underline"
                 label="Descargar catálogo de servicios de Rocktech C.F." />
