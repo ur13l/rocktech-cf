@@ -25,6 +25,8 @@ const ImgWrapper2 = styled.span`
     .logo{ 
       margin:10px;
     }
+
+    
   }
 `
 

@@ -70,7 +70,7 @@ class Services extends Component {
                        onClick={() => this.onCardClick(1)}/>
           <ServiceCard title="Análisis Financiero de Costos"
                        onClick={() => this.onCardClick(2)}/>
-          <ServiceCard title="Diseño de Estrategia Financiera"
+          <ServiceCard title="Diseño Financiero de Negocio"
                        onClick={() => this.onCardClick(3)}/>
           <ServiceCard title="Valoración del Negocio"
                        onClick={() => this.onCardClick(4)}/>
@@ -78,10 +78,6 @@ class Services extends Component {
                        onClick={() => this.onCardClick(5)}/>
         </div>
         <div className="link-services">
-          <Link href="https://go.aws/2yvmX9B"
-                align="right"
-                decoration="underline"
-                label="Descargar catálogo de servicios de Rocktech C.F." />
         </div>
         <ServiceDialog isOpen={this.state.openModal}
                       onClose={() => this.onCloseModal()}

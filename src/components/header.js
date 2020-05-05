@@ -4,7 +4,7 @@ import React, { Component } from "react"
 import styled from "styled-components"
 import "../styles/global.css"
 import Logo from "./images/logo.js"
-import { FaSearch, FaTimes, FaBars } from "react-icons/fa"
+import {  FaBars } from "react-icons/fa"
 import Menu from "./menu"
 /**
  * HeaderWrapper element, used to set style to a component.
@@ -16,7 +16,11 @@ const HeaderWrapper = styled.header`
   z-index: 999999999;
   
 
- 
+ .space-above{
+   margin-top: 15px;
+ }
+
+
 
   .custom-link {
     color: #df8d08;
@@ -124,7 +128,7 @@ const HeaderWrapper = styled.header`
   @media only screen and (max-width: 768px) {
     #header-mobile {
       display: grid;
-      grid-template-columns: 2fr;
+      grid-template-columns: auto auto;
       color: black;
       align-content: center;
       grid-gap: 18px;
@@ -146,7 +150,7 @@ const HeaderWrapper = styled.header`
   @media only screen and (min-width: 768px) and (max-width: 992px) {
     #header-mobile {
       display: grid;
-      grid-template-columns: 2fr;
+      grid-template-columns: auto auto;
       color: black;
       align-content: center;
       grid-gap: 18px;
@@ -253,7 +257,7 @@ class Header extends Component {
          / <Link to="/">
             <Logo   location={this.props.location}/>
           </Link>
-          <ul>
+          <ul className="space-above">
             <li>
             <a className={"custom-link"} href={"https://crowd.rocktech.mx/proyectos-de-inversion"}>
             CROWDFUNDING </a>
@@ -265,6 +269,14 @@ class Header extends Component {
           </ul>
         </div>
         <div id="header-mobile" className="container hide-on-large-and-up">
+        <div
+            className="menu-icon-container pointer"
+            onClick={() => {
+              this.openMenu()
+            }}
+          >
+            <FaBars/>
+          </div>
           <Logo  location={this.props.location}/>
         </div>
       </HeaderWrapper>
