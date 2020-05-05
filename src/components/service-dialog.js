@@ -48,7 +48,14 @@ const ServiceDialog = ({ option, isOpen, onClose }) => {
           }
         }
       }
-      iconBa: file(relativePath: { eq: "calc.png" }) {
+      iconBa: file(relativePath: { eq: "building.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000, maxHeight: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      iconCon: file(relativePath: { eq: "graphic.png" }) {
         childImageSharp {
           fluid(maxWidth: 2000, maxHeight: 2000) {
             ...GatsbyImageSharpFluid
@@ -92,6 +99,13 @@ const ServiceDialog = ({ option, isOpen, onClose }) => {
       text = 'Valoración de negocios en marcha';
       text1 = 'Valoración de proyectos de inversión';
       text2 = 'Valoración de intangibles';
+      imageData = data.iconBa.childImageSharp.fluid;
+      break;
+    case 'con':
+      title = 'Análisis de Valores';
+      text = 'Análisis Fundamental';
+      text1 = 'Analítica de datos';
+      text2 = 'Opinión de Inversión';
       imageData = data.iconBa.childImageSharp.fluid;
       break;
   }
