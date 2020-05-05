@@ -88,7 +88,7 @@ const ServiceDialog = ({ option, isOpen, onClose }) => {
       imageData = data.iconMp.childImageSharp.fluid;
       break;
     case 'ds':
-      title = 'Diseño de Estrategia Financiera';
+      title = 'Diseño Financiero de Negocio';
       text = 'Modelo de negocio';
       text1 = 'Estrategia comercial';
       text2 = 'Estructura de capital';
