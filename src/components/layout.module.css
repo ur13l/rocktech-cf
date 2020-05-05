@@ -1,5 +1,4 @@
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -66,7 +65,7 @@ h1 {
 }
 mark {
   background-color: #ff0;
-  color: #000;
+  color: #707070;
 }
 small {
   font-size: 80%;
@@ -185,7 +184,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 85%/1.45em georgia, serif;
+  font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -200,7 +199,6 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -268,7 +266,7 @@ h3 {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.38316rem;
+  font-size: 1.18316rem;
   line-height: 1.1;
 }
 h4 {
